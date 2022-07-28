@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700&family=Open+Sans&family=Roboto:wght@300;500;700&display=swap');
+
+ * {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+ }
+/*
+
+generic
+
+*/
+.clickable:hover{
+    color:white;
+    background:pink;
+}
+.row{
+    width:100%;
+    height:100%;
+    max-width:1200px;
+    margin:0 auto;
+}
+a:hover{
+    text-decoration:underline;
+}
+.container{
+margin:60px 0;
+}
+.background__img{    
+    background-image: url('https://dev.d24jig8s1lr7n9.amplifyapp.com/img/carpark.8742e246.jpeg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height:60%;
+    top:0;
+    left:0;
+    position: absolute;
+  z-index:-1;
+}
+
+
+.background__img:after{
+    content: '';
+    width:100%;
+    background:rgba(41,25,71,.83);
+    opacity:0.7;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    pointer-events:none;
+
+}
+
+ /*
+ 
+ navbar
+ 
+ */
+ .nav{
+    width:100%;
+    height:80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 24px;
+    
+ }
+ .blinker__img{
+    width:150px;
+
+ }
+ .nav__links{
+    display: flex;
+    list-style:none;
+ }
+ .nav__link{
+    margin:0 16px;
+ }
+ .nav__anchor{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+ }
+ .contact{
+    background:white;
+    color:purple;
+    padding: 8px 18px;
+    border-radius:20px;
+    transition:all 300ms ease;
+ }
+ .contact:hover{
+    text-decoration:none;
+ }
+
+ /*
+ 
+ browse
+ 
+ */
+ #browse{
+    width:100vw;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    
+ }
+ .part__one{
+    height:100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+ }
+ .section__title{
+    font-size:48px;
+    font-weight:bold;
+    color:white;
+ }
+ .input{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .section__input{
+ width:100%;
+ max-width:500px;
+ height:70px;
+ border-radius:24px;
+ border:none;
+ outline:none;
+ margin:24px 0;
+ position:relative;
+ padding:0 16px;
+ }
+ 
+ .input__btn{
+    position:absolute;
+    width:40px;
+    color:purple;
+    background:transparent;
+    border:none;
+    margin-left:400px;
+    transition: all 200ms ease;
+ }
+.input__btn:hover{
+    color:pink;
+}
+
+ /*
+ 
+ landing
+ 
+ */
+#landing{
+    width:100vw;
+    height:100vh;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing__title{
+    font-size:36px;
+    color:#242424;
+    font-weight:bold;
+    z-index:15;
+}
