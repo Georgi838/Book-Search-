@@ -8,7 +8,7 @@ async function renderAPIs(id) {
      }
   
   
-  const res = await fetch(`http://www.omdbapi.com/?apikey=234d65c1&s=${id}`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=234d65c1&s=${id}`);
  
   apiWrapper.classList += (" landing__overlay--loading");
   const datas = await res.json();
@@ -22,7 +22,7 @@ async function renderAPIs(id) {
   
     
     let mooviesHTML = datas.Search.map((data) => {
-      dick();
+    
       return ` <div class="moovie">
       <div>
       <img src="${data.Poster}" class="moovie__poster" alt="">
@@ -32,24 +32,18 @@ async function renderAPIs(id) {
       </div>`;
     }).slice(0, 6).join("") ;
     
-    
-    console.log(datas);
     apiWrapper.innerHTML = mooviesHTML;
-    
-}
-  function dick(fill){
-    if (fill == 0 ) {
-        // array exists and is not empty
-        mat.classList+=" no__matches"
-    }
-    }
-   
-
-  function submit(event) {
-       dick(event.totalReasults)
-      renderAPIs(event.target.value);
+    console.log(datas);
   }
- 
+    
+   
+    
+    
+  
+    function submit(event) {
+      
+      renderAPIs(event.target.value);
+ }
 setTimeout(() => {
   renderAPIs();
 }, 1000);
