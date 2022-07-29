@@ -30,14 +30,15 @@ async function renderAPIs(id) {
       <div class="moovie__title">${data.Title}</div>
       <div class="moovie__year">${data.Year}</div>
       </div>`;
-    }).slice(0, 6).join("") ; 
-      
+    }).slice(0, 6).join("") ;
+    
+    
     console.log(datas);
     apiWrapper.innerHTML = mooviesHTML;
     
-  }
-    function dick(fill){
-      if (fill == 0 ) {
+}
+  function dick(fill){
+    if (fill == 0 ) {
         // array exists and is not empty
         mat.classList+=" no__matches"
     }
