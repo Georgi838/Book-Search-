@@ -25,8 +25,8 @@ a:hover{
     text-decoration:underline;
 }
 .container{
-margin:60px 0;
-}
+   margin:60px 0 30px 0;
+   }
 .background__img{    
     background-image: url('https://dev.d24jig8s1lr7n9.amplifyapp.com/img/carpark.8742e246.jpeg');
     background-repeat: no-repeat;
@@ -162,9 +162,11 @@ margin:60px 0;
 #landing{
     width:100vw;
     height:100vh;
-}
-.search{
-    display: flex;
+    position:relative;
+   }
+   .search{
+      display: flex;
+      flex-direction:column;
     justify-content: center;
     align-items: center;
 }
@@ -172,5 +174,94 @@ margin:60px 0;
     font-size:36px;
     color:#242424;
     font-weight:bold;
-    z-index:15;
+    padding-bottom:24px;
+}
+.moovies{
+   display: flex;
+   width:100%;
+   height:100%;
+   flex-wrap:wrap;
+   justify-content: center;
+   align-items: center;
+}
+.moovie{
+   width: calc(100% / 4);
+   margin:24px;
+   display: flex;
+   flex-direction:column;
+   align-items: flex-start;
+   justify-content: center;
+}
+.moovie__poster{
+   width:200px;
+}
+/*
+
+landing overlay
+
+*/
+.landing__overlay--loading{
+   width:100%;
+   height:100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position:absolute;
+  bottom:0;
+  right:0;
+}
+.fa-spinner{
+   width:100px;
+   z-index: 200;
+   height:100px;
+   color:purple;
+  font-size:100px;
+  animation:spin 500ms  infinite linear;
+ 
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0)
+   }
+   100% {
+      transform: rotate(360deg)
+   }
+}
+/* 
+
+matches 
+
+*/
+.no__matches{
+   z-index:100;
+   width:100%;
+   height:100%;
+   position:absolute;
+   display: flex;
+   background:white;
+   flex-direction:column;
+   align-items: center;
+   justify-content: center;
+   display:none;
+}
+.match__title{
+   font-size:36px;
+   color:purple;
+   margin-bottom:150px;
+}
+.match__figure{
+   display: flex;
+   justify-content: center;
+}
+.match__img{
+   width:50%;
+   background:transparent;
+}
+.blank{
+   width:100%;
+   height:100%;
+   position:absolute;
+   background:white;
+ 
 }
