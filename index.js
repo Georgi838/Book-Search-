@@ -1,6 +1,6 @@
 async function renderAPIs(id) {
   const apiWrapper = document.querySelector(".moovies");
-  const mat = document.querySelector(".no__matches")
+  // const mat = document.querySelector(".no__matches")
   let matches= "fast"; 
   matches=id; 
   if( matches === undefined ){
@@ -21,7 +21,7 @@ async function renderAPIs(id) {
 
   
     
-    let mooviesHTML = datas.Search.map((data) => {
+    let mooviesHTML = datas?.Search?.map((data) => {
     
       return ` <div class="moovie">
       <div>
@@ -31,7 +31,9 @@ async function renderAPIs(id) {
       <div class="moovie__year">${data.Year}</div>
       </div>`;
     }).slice(0, 6).join("") ;
-    
+    // if(datas.Search < 1){
+    //   apiWrapper.classList += " no__matches";
+    // }
     apiWrapper.innerHTML = mooviesHTML;
     console.log(datas);
   }
