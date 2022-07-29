@@ -1,27 +1,51 @@
 async function renderAPIs(id) {
   const apiWrapper = document.querySelector(".moovies");
+  const mat = document.querySelector(".no__matches")
+  let matches= "fast"; 
+  matches=id; 
+  if( matches === undefined ){
+     id = "fast";
+     }
+  
   
   const res = await fetch(`http://www.omdbapi.com/?apikey=234d65c1&s=${id}`);
-  const datas = await res.json();
-  
+ 
   apiWrapper.classList += (" landing__overlay--loading");
+  const datas = await res.json();
+ 
   apiWrapper.classList.remove("landing__overlay--loading");
+  const search = document.querySelector('.landing__title')
+  search.innerHTML=`<div class="landing__title">Search results for <for:span class="purple">${id}</for:span> </div>`
 
-  const mooviesHTML = datas.Search.map((data) => {
-    return ` <div class="moovie">
-    <div>
-    <img src="${data.Poster}" class="moovie__poster" alt="">
-    </div>
-    <div class="moovie__title">${data.Title}</div>
-    <div class="moovie__year">${data.Year}</div>
-    </div>`;
-  })
-  .slice(0, 6)
-  .join("");
-  apiWrapper.innerHTML = mooviesHTML;
-}
+
+
   
+    
+    let mooviesHTML = datas.Search.map((data) => {
+      dick();
+      return ` <div class="moovie">
+      <div>
+      <img src="${data.Poster}" class="moovie__poster" alt="">
+      </div>
+      <div class="moovie__title">${data.Title}</div>
+      <div class="moovie__year">${data.Year}</div>
+      </div>`;
+    }).slice(0, 6).join("") ; 
+      
+    console.log(datas);
+    apiWrapper.innerHTML = mooviesHTML;
+    
+  }
+    function dick(fill){
+      if (fill == 0 ) {
+        // array exists and is not empty
+        mat.classList+=" no__matches"
+    }
+    }
+   
+
   function submit(event) {
+       dick(event.totalReasults)
       renderAPIs(event.target.value);
   }
  
