@@ -4,14 +4,8 @@ async function renderAPIs(id) {
  
   // we link that class with the js file
   const apiWrapper = document.querySelector(".movies");
-
-  // we link that class with the js file
+  
  
-
-  
-
-  //const mat = document.querySelectorAll(".no__matches");
-  
   // let matches = id;
   // //before the user searches for anything there will be 6 films loaded so movies is not empty
   // if (matches === undefined) {
@@ -53,14 +47,14 @@ async function renderAPIs(id) {
       apiWrapper.innerHTML=
       `<div class="blank">
       <h1 class="blank__title">What do you <span class="purple">feel</span> like watching today?</h1>
-      </div>`;
+      </div>`
     }
     if (datas.Search == undefined) {
         //we change the html in apiWrapper(.movies) to the no result page 
           apiWrapper.innerHTML=
           `<div class="matches">
           <figure class="match__figure">
-          <img src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000" alt="" class="match__img">
+          <img src="https://t3.ftcdn.net/jpg/04/51/24/16/360_F_451241665_xhj6U7452mVDLzVB3ZxJrFVe1ByHTkFm.jpg?w=2000" alt="" class="match__img">
           </figure>
           <h2 class="match__title"> What do you mean <span class="purple">${id}</span>?</h2>
           </div>`;
@@ -80,28 +74,6 @@ async function renderAPIs(id) {
     console.log(datas.Search)
     console.log(err)
   }
- 
-  
-  
-  //I am trying to make the .no__matches class appear when the value of .movies is undefined(when the event.target.value doesn not match with an array from omdb.com )
-//   noMatch();
-//   function noMatch(){
-//     if (id===undefined) {
-//     apiWrapper.innerHTML=
-//     `<div class="matches">
-//     <h3 class="match__tittle"><span class="purple">it is young paduan</span></h3>
-//     <figure class="match__figure">
-//     <img src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000" alt="" class="match__img">
-//     </figure>
-//     <h2 class="match__title">There weren't any matches found ${id}</h2>
-//     </div>`;
-//     mat.classList += ' matches';
-//   }
-//   else{
-//     console.log("55")
-//   }
-// }
-
 }
 
 
@@ -116,7 +88,9 @@ function html(data) {
       <div class="movie__year">${data.Year}</div>
       </div>`;
 }
-
+function onClick(event){
+  renderAPIs(event.target.value)
+}
 //here we get the event.target.value(whatever is written in the input) and we store that value in renderAPIs parameter which is (id)
 function submit(event) {
   renderAPIs(event.target.value);

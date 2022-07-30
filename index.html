@@ -1,63 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
     <title>Final Project</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="browse">
-    <div class="row">
-        <div class="nav"> 
-            <figure class="blinker__img--wrap">
-                <img src="assets/whitelogo.39850b27.png" alt="69" class="blinker__img">
-            </figure>
-            <ul class="nav__links">
-                <li class="nav__link"><a href="" class="nav__anchor">Home</a></li>
-                <li class="nav__link"><a href="" class="nav__anchor">Find your stuff</a></li>
-                <li class="nav__link"><a href="" class="nav__anchor contact clickable">Contact</a></li>
-            </ul>
+      <div class="row">
+        <div class="nav">
+          <figure class="blinker__img--wrap">
+            <img
+              src="assets/whitelogo.39850b27.png"
+              alt="69"
+              class="blinker__img"
+            />
+          </figure>
+          <ul class="nav__links">
+            <li class="nav__link"><a href="" class="nav__anchor">Home</a></li>
+            <li class="nav__link">
+              <a href="" class="nav__anchor">Find your stuff</a>
+            </li>
+            <li class="nav__link">
+              <a href="" class="nav__anchor contact clickable">Contact</a>
+            </li>
+          </ul>
         </div>
         <div class="container">
-                    <div class="part__one">    
-                        <div class="section__title">
-                            Browse our Stuff
-                        </div>
-                        <div class="input" >
-                            <input type="search" class="section__input" placeholder="Search by name" onsearch="submit(event)"><button  onclick="onClick()" class=" btn input__btn" ><svg data-v-390ceb07="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16" ><path data-v-390ceb07="" fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class="Lupa" ></path></svg></button>
-                        </div>
-                    </div>
-                    <div class="background__img">
-                    </div>
-                </div>
+          <div class="part__one">
+            <div class="section__title">Choose a movie for tonight</div>
+            <div class="input">
+              <input
+                type="search"
+                class="section__input"
+                placeholder="Something horror perhaps?"
+                onsearch="submit(event)"
+              /><button  id="button" onclick="submit(event)" class="btn input__btn">
+                <svg
+                  data-v-390ceb07=""
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="search"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="svg-inline--fa fa-search fa-w-16"
+                >
+                  <path
+                    data-v-390ceb07=""
+                    fill="currentColor"
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                    class="Lupa"
+                  ></path>
+                </svg>
+              </button>
             </div>
-        </section>
-    <section id="landing">
-        <div class="row">
-            <div class="container">
-                <div class="search">
-                    <div class="landing__title">Search results <for:span class="purple"></for:span> </div>
-                    <div class="movies" onchange="noMatch()">
-                        <div class="landing__overlay--loading ">
-                            <i class="fas fa-spinner"></i>
-                        </div>
-                        <div class="matches">
-                            <figure class="match__figure">
-                                <img src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000" alt="" class="match__img">
-                            </figure>
-                            <h2 class="match__title">There weren't any matches found</h2>
-                        </div>
-                        <div class="blank">
-                            <h1 class="blank__title">What do you <span class="purple">feel</span> like watching today?</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="background__img"></div>
         </div>
+      </div>
     </section>
-</body>
+    <section id="landing">
+      <div class="row">
+        <div class="container">
+          <div class="search">
+            <div class="landing__title">
+              Loading data <for:span class="purple"></for:span>
+            </div>
+            <div class="movies" onchange="noMatch()">
+              <div class="landing__overlay--loading">
+                <i class="fas fa-spinner"></i>
+              </div>
+              <!-- <div class="matches">
+                <figure class="match__figure">
+                  <img
+                    src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000"
+                    alt=""
+                    class="match__img"
+                  />
+                </figure>
+                <h2 class="match__title">There weren't any matches found</h2>
+              </div> -->
+              <!-- <div class="blank">
+                <h1 class="blank__title">
+                  What do you <span class="purple">feel</span> like watching
+                  today?
+                </h1>
+              </div> -->
+              <!-- <div class="year__range">
+                <header class="year">
+                  <h3 class="year__title">
+                    Enter from what range of years you want the films to be
+                  </h3>
+                </header>
+                <div class="inputs__year">
+                  <div class="input input1">
+                    <span class="year__span" >Min</span>
+                    <input type="number" value="1960" class="input__min" />
+                  </div>
+                  <div class="input input2">
+                    <span class="year__span">Max</span>
+                    <input type="number" value="2022" class="input__max" />
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="progress"></div>
+                </div>
+              </div> -->
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
