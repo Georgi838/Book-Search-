@@ -1,4 +1,10 @@
 
+function openMenu(){
+  document.body.classList += " menu--open"
+ }
+ function closeMenu(){ 
+     document.body.classList.remove ('menu--open')
+    }
 //we make our asynchronic function
 async function renderAPIs(id) {
  
@@ -93,7 +99,7 @@ function html(data) {
   }
   return ` <div class="movie">
   <div>
-  <a href="https://youtu.be/BBJa32lCaaY" class="clicking" target="_blank">
+  <a href="https://youtu.be/EE-xtCF3T94" class="clicking" target="_blank">
     <img src="${data.Poster}" class="movie__poster" alt="">
   </a>
   </div>
