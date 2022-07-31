@@ -39,7 +39,7 @@
                 class="section__input"
                 placeholder="Something horror perhaps?"
                 onsearch="submit(event)"
-              /><button  id="button" onclick="submit(event)" class="btn input__btn">
+              /><button    class="btn input__btn" type="button">
                 <svg
                   data-v-390ceb07=""
                   aria-hidden="true"
@@ -49,7 +49,8 @@
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  class="svg-inline--fa fa-search fa-w-16"
+                  class="clickSearch"
+                  onclick="onClick(event)"
                 >
                   <path
                     data-v-390ceb07=""
@@ -76,6 +77,8 @@
               <div class="landing__overlay--loading">
                 <i class="fas fa-spinner"></i>
               </div>
+              <div>
+
               <!-- <div class="matches">
                 <figure class="match__figure">
                   <img
@@ -112,7 +115,9 @@
                   <div class="progress"></div>
                 </div>
               </div> -->
-             
+             <div class="slider__wrapper">
+              <div class="slider"></div>
+             </div>
             </div>
           </div>
         </div>

@@ -11,6 +11,9 @@
 generic
 
 */
+.clicking{
+   cursor: pointer;
+}
 .clickable:hover{
     color:darkred;
     background:white;
@@ -128,7 +131,7 @@ a:hover{
  .section__title{
     font-size:48px;
     font-weight:bold;
-    color:red;
+    color:#cb0606;
    transition: all 300ms ease;
  }
  .section__title:hover{
@@ -227,7 +230,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 .movie__poster{
    width:100%;
-   max-width:180px;
+   max-width:200px;
+   max-height:250px;
    color:white;
    border:1px solid gray;
    border-radius:10px;

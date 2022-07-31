@@ -5,7 +5,7 @@ async function renderAPIs(id) {
   // we link that class with the js file
   const apiWrapper = document.querySelector(".movies");
   
- 
+
   // let matches = id;
   // //before the user searches for anything there will be 6 films loaded so movies is not empty
   // if (matches === undefined) {
@@ -13,6 +13,7 @@ async function renderAPIs(id) {
   // }
 
 //we call the API
+
   const res = await fetch(`https://www.omdbapi.com/?apikey=234d65c1&s=${id}`);
 
 //we call the loading class
@@ -49,6 +50,7 @@ async function renderAPIs(id) {
       <h1 class="blank__title">What do you <span class="purple">feel</span> like watching today?</h1>
       </div>`
     }
+    
     if (datas.Search == undefined) {
         //we change the html in apiWrapper(.movies) to the no result page 
           apiWrapper.innerHTML=
@@ -74,25 +76,36 @@ async function renderAPIs(id) {
     console.log(datas.Search)
     console.log(err)
   }
+ 
 }
-
-
-
+const btn = document.querySelector(".clickSearch")
+function onClick(event){
+  const parent = event.target.closest('.input')
+  const input = parent.querySelector('.section__input')
+  event.target.value = input.value
+  renderAPIs(event.target.value)
+  }
+ 
 //we return every object in the array from omdb.com in html with the correct image, title and year by calling that function in the .map() above
 function html(data) {
+  if(data.Poster === "N/A"){
+    return ` `;
+  }
   return ` <div class="movie">
-      <div>
-      <img src="${data.Poster}" class="movie__poster" alt="">
-      </div>
+  <div>
+  <a href="https://youtu.be/BBJa32lCaaY" class="clicking" target="_blank">
+    <img src="${data.Poster}" class="movie__poster" alt="">
+  </a>
+  </div>
       <div class="movie__title">${data.Title}</div>
       <div class="movie__year">${data.Year}</div>
       </div>`;
 }
-function onClick(event){
-  renderAPIs(event.target.value)
-}
+
+
 //here we get the event.target.value(whatever is written in the input) and we store that value in renderAPIs parameter which is (id)
 function submit(event) {
+
   renderAPIs(event.target.value);
 }
 
