@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" ></script>
     <title>Final Project</title>
   </head>
   <body>
@@ -14,35 +14,60 @@
       <div class="row">
         <div class="nav">
           <figure class="blinker__img--wrap">
-            <a href="https://youtu.be/BBJa32lCaaY" class="clicking" target="_blank">  
+            <a
+              href="https://youtu.be/BBJa32lCaaY"
+              class="clicking"
+              target="_blank"
+            >
               <img
-              src="https://cdn.dribbble.com/users/529449/screenshots/4851203/atm_neon_dribbble.jpg"
-              alt="69"
-              class="blinker__img"
+                src="https://cdn.dribbble.com/users/529449/screenshots/4851203/atm_neon_dribbble.jpg"
+                alt="69"
+                class="blinker__img"
               />
             </a>
           </figure>
           <ul class="nav__links">
-            <li class="nav__link"><a href="" class="nav__anchor">Home</a></li>
+            <li class="nav__link"><a href="#" class="nav__anchor">Home</a></li>
             <li class="nav__link">
-              <a href="" class="nav__anchor">Find your movies</a>
+              <a href="#" class="nav__anchor">Find your movies</a>
             </li>
             <li class="nav__link">
-              <a href="" class="nav__anchor contact clickable">Contact</a>
+              <a
+                href="https://georgi838.github.io/E-Portfolio/"
+                target="_blank"
+                class="nav__anchor contact clickable"
+                >Contact</a
+              >
             </li>
           </ul>
           <button class="menu__btnn" onclick="openMenu()">
             <i class="fas fa-bars" aria-hidden="true"></i>
           </button>
-          <div class="menu__backdrop ">
+          <div class="menu__backdrop">
             <button class="btn__menu" onclick="closeMenu()">
               <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <ul class="backdrop__ul">
-                  <li class="backdrop__li"><a href="https://treact.owaiskhan.me/" class="backdrop__link " onclick="closeMenu()">Home</a></li>
-                  <li class="backdrop__li"><a href="https://treact.owaiskhan.me/" class="backdrop__link" onclick="closeMenu()">Find your movies</a></li>
-                  <li class="backdrop__li"><a href="https://treact.owaiskhan.me/" class="backdrop__link contact-2" onclick="closeMenu()">Contact</a></li>
-                </ul>
+              <li class="backdrop__li">
+                <a href="#" class="backdrop__link" onclick="closeMenu()"
+                  >Home</a
+                >
+              </li>
+              <li class="backdrop__li">
+                <a href="#" class="backdrop__link" onclick="closeMenu()"
+                  >Find your movies</a
+                >
+              </li>
+              <li class="backdrop__li">
+                <a
+                  href="https://georgi838.github.io/E-Portfolio/"
+                  target="_blank"
+                  class="backdrop__link contact-2"
+                  onclick="closeMenu()"
+                  >Contact</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
         <div class="container">
@@ -54,7 +79,7 @@
                 class="section__input"
                 placeholder="Something horror perhaps?"
                 onsearch="submit(event)"
-              /><button    class="btn input__btn" type="button">
+              /><button class="btn input__btn" type="button">
                 <svg
                   data-v-390ceb07=""
                   aria-hidden="true"
@@ -88,51 +113,47 @@
             <div class="landing__title">
               Loading data <for:span class="purple"></for:span>
             </div>
-            <div class="movies" onchange="noMatch()">
+            <div class="movies">
               <div class="landing__overlay--loading">
                 <i class="fas fa-spinner"></i>
               </div>
-              <div>
 
               <!-- <div class="matches">
                 <figure class="match__figure">
                   <img
-                    src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000"
+                  src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000"
                     alt=""
                     class="match__img"
-                  />
-                </figure>
-                <h2 class="match__title">There weren't any matches found</h2>
-              </div> -->
+                    />
+                  </figure>
+                  <h2 class="match__title">There weren't any matches found</h2>
+                </div>  -->
               <!-- <div class="blank">
                 <h1 class="blank__title">
                   What do you <span class="purple">feel</span> like watching
                   today?
                 </h1>
-              </div> -->
-              <!-- <div class="year__range">
-                <header class="year">
-                  <h3 class="year__title">
-                    Enter from what range of years you want the films to be
-                  </h3>
-                </header>
-                <div class="inputs__year">
-                  <div class="input input1">
-                    <span class="year__span" >Min</span>
-                    <input type="number" value="1960" class="input__min" />
-                  </div>
-                  <div class="input input2">
-                    <span class="year__span">Max</span>
-                    <input type="number" value="2022" class="input__max" />
-                  </div>
+              </div> 
+
+              
+              <div class="wrapper">
+                <div class="values">
+                  <span id="range1">
+                    0
+                  </span>
+                  <span> &dash;</span>
+                  <span id="range2">
+                    100
+                  </span>
                 </div>
-                <div class="slider">
-                  <div class="progress"></div>
-                </div>
-              </div> -->
-             <div class="slider__wrapper">
-              <div class="slider"></div>
-             </div>
+                <div class="container1">
+                    <div class="slider-track"></div>
+                    <input type="range" min="1960" max="2022"
+                    value="30" id="slider-1" oninput="slideOne()">
+                    <input type="range" min="1960" max="2022"
+                    value="70" id="slider-2" oninput="slideTwo()">
+                  </div>
+                </div>  -->
             </div>
           </div>
         </div>

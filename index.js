@@ -1,18 +1,26 @@
 
 function openMenu(){
   document.body.classList += " menu--open"
+  
  }
  function closeMenu(){ 
      document.body.classList.remove ('menu--open')
     }
+
 //we make our asynchronic function
 async function renderAPIs(id) {
  
   // we link that class with the js file
   const apiWrapper = document.querySelector(".movies");
   
-
-  // let matches = id;
+  // let sliderOne = document.getElementById("slider-1");
+  //     let sliderTwo = document.getElementById("slider-2");
+  //     let displayValOne = document.getElementById("range1");
+  //     let displayValTwo = document.getElementById("range2");
+  //     let minGap = 5;
+  //     let sliderTrack = document.querySelector(".slider-track");
+  //     let sliderMaxValue = document.getElementById("slider-1");
+  // // let matches = id;
   // //before the user searches for anything there will be 6 films loaded so movies is not empty
   // if (matches === undefined) {
   //   id = " ";
@@ -39,9 +47,9 @@ async function renderAPIs(id) {
     search.innerHTML = `<div class="landing__title">  </div>`;
   }
   else{
-    search.innerHTML = `<div class="landing__title">Search results for: <for:span class="purple">${id}</for:span> </div>`;
+    search.innerHTML = `<div class="landing__title">Search results for: <for:span class="purple">${id}</for:span> </div> 
+    `;
   }
-
   //we introduce a life saving promise.. that made my life easier wtf
   new Promise((resolve, reject) => {
     let err = false
@@ -49,14 +57,61 @@ async function renderAPIs(id) {
     let moviesHTML = datas?.Search?.map((data) => html(data)).slice(0, 6) .join("")
     //we convert the array of objects(moovie) into html 
     apiWrapper.innerHTML = moviesHTML
+    
     //if the requested API does not have arr of objects in omdb.com(who tf searches jfvjfd?) and it gives a value of undefined we pring a no results page
+    
     if(id == undefined){
       apiWrapper.innerHTML=
       `<div class="blank">
       <h1 class="blank__title">What do you <span class="purple">feel</span> like watching today?</h1>
       </div>`
-    }
+
+      }
+      /*
+      
+      
+      shiiit
+      
+      
+      */
+     
     
+      
+    
+    //   function slideOne(){
+    //     console.log("this ran")
+    //     if(parseInt(sliderTwo.value) -  parseInt
+    //     (sliderOne.value) <= minGap) {
+    //       sliderOne.value = parseInt(sliderTwo.value)
+    //       - minGap
+    //     }
+    //     displayValOne.textContent = sliderOne.value
+    //     fillColor();
+    //   }
+      
+    //   function slideTwo(){
+    //     if(parseInt(sliderTwo.value) -  parseInt
+    //     (sliderOne.value) <= minGap){
+    //     sliderTwo.value = parseInt(sliderOne.value)
+    //     + minGap
+    //   }
+    //   displayValTwo.textContent = sliderTwo.value
+    //   fillColor();
+    // }
+    
+    // function fillColor(){
+    //     percent1 = (sliderOne.value / sliderMaxValue) * 100
+    //     percent2 = (sliderTwo.value / sliderMaxValue) * 100
+    //     console.log(percent1, percent2);
+    //   }
+           /*
+           
+           
+           shiiit
+           
+           
+        */
+
     if (datas.Search == undefined) {
         //we change the html in apiWrapper(.movies) to the no result page 
           apiWrapper.innerHTML=
@@ -70,6 +125,7 @@ async function renderAPIs(id) {
         else{
           console.log(" Thats's beautiful")
         }
+     
     if(!err){
       resolve(console.log(datas.Search))
     }
@@ -106,12 +162,12 @@ function html(data) {
       <div class="movie__title">${data.Title}</div>
       <div class="movie__year">${data.Year}</div>
       </div>`;
-}
-
-
+      
+ 
+      }
 //here we get the event.target.value(whatever is written in the input) and we store that value in renderAPIs parameter which is (id)
 function submit(event) {
-
+  
   renderAPIs(event.target.value);
 }
 
