@@ -13,18 +13,7 @@ async function renderAPIs(id) {
   // we link that class with the js file
   const apiWrapper = document.querySelector(".movies");
   
-  // let sliderOne = document.getElementById("slider-1");
-  //     let sliderTwo = document.getElementById("slider-2");
-  //     let displayValOne = document.getElementById("range1");
-  //     let displayValTwo = document.getElementById("range2");
-  //     let minGap = 5;
-  //     let sliderTrack = document.querySelector(".slider-track");
-  //     let sliderMaxValue = document.getElementById("slider-1");
-  // // let matches = id;
-  // //before the user searches for anything there will be 6 films loaded so movies is not empty
-  // if (matches === undefined) {
-  //   id = " ";
-  // }
+ 
 
 //we call the API
 
@@ -67,50 +56,6 @@ async function renderAPIs(id) {
       </div>`
 
       }
-      /*
-      
-      
-      shiiit
-      
-      
-      */
-     
-    
-      
-    
-    //   function slideOne(){
-    //     console.log("this ran")
-    //     if(parseInt(sliderTwo.value) -  parseInt
-    //     (sliderOne.value) <= minGap) {
-    //       sliderOne.value = parseInt(sliderTwo.value)
-    //       - minGap
-    //     }
-    //     displayValOne.textContent = sliderOne.value
-    //     fillColor();
-    //   }
-      
-    //   function slideTwo(){
-    //     if(parseInt(sliderTwo.value) -  parseInt
-    //     (sliderOne.value) <= minGap){
-    //     sliderTwo.value = parseInt(sliderOne.value)
-    //     + minGap
-    //   }
-    //   displayValTwo.textContent = sliderTwo.value
-    //   fillColor();
-    // }
-    
-    // function fillColor(){
-    //     percent1 = (sliderOne.value / sliderMaxValue) * 100
-    //     percent2 = (sliderTwo.value / sliderMaxValue) * 100
-    //     console.log(percent1, percent2);
-    //   }
-           /*
-           
-           
-           shiiit
-           
-           
-        */
 
     if (datas.Search == undefined) {
         //we change the html in apiWrapper(.movies) to the no result page 
